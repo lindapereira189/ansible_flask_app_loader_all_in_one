@@ -1,0 +1,13 @@
+---
+- name: Deploy, configure, and populate flask repo and virtualenv
+  hosts: app_servers
+  become: true
+  gather_facts: false
+  tags:
+    - application_servers
+    - flask
+  vars_files:
+    - "group_vars/app_servers.yml"
+  roles:
+
+    - app_tier

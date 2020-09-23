@@ -1,0 +1,15 @@
+---
+- name: Deploy haproxy load balancer
+  hosts: load_balancers
+  gather_facts: false 
+  become: true
+
+  vars_files:
+    - "group_vars/load_balancers.yml"
+
+  tags:
+    - load_balancers
+
+  roles:
+  
+      - load_balancer
